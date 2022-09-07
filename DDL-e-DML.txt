@@ -1,0 +1,25 @@
+-- Criar tabela Principal
+CREATE TABLE Tb_Cliente (
+    [id] [int] IDENTITY(1,1) NOT NULL,
+    [Dt_Entrada] datetime2 NOT NULL,
+    [Dt_Saida] datetime2,
+    [Nome] [nvarchar](80) NOT NULL,
+    [Placa] [nvarchar](8) NOT NULL,
+    [Cor_Carro] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+( [id] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+
+-- Criar tabela de identificação de cores
+CREATE TABLE Tb_Cores (
+    [Valor] [int] NOT NULL,
+    [Cor] [nvarchar](80) NOT NULL
+) ON [PRIMARY]
+
+-- Carga de dados para tabela de cores
+INSERT INTO [dbo].[Tb_Cores] (Valor, Cor) VALUES (0, 'Prata');
+INSERT INTO [dbo].[Tb_Cores] (Valor, Cor) VALUES (1, 'Preto');
+INSERT INTO [dbo].[Tb_Cores] (Valor, Cor) VALUES (2, 'Branco');
+INSERT INTO [dbo].[Tb_Cores] (Valor, Cor) VALUES (3, 'Vermelho');
+INSERT INTO [dbo].[Tb_Cores] (Valor, Cor) VALUES (4, 'Azul');

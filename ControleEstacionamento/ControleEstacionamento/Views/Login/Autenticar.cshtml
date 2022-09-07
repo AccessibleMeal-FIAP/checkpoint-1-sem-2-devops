@@ -1,0 +1,44 @@
+﻿@model Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex flex-column justify-content-center">
+    <div class="icon d-flex flex-column align-items-center">
+        <img class="mx-auto margin" src="~/images/Logo.png" width="100px" height="100px"/>
+        <h2 class="margin"><span>Estacionamento</span></h2>
+    </div>
+
+    <mensagem error="@TempData["msg"]"></mensagem>
+    <form class="d-flex flex-column"asp-action="Autenticar"asp-controller="Login">
+
+        <partial name="_Form"/>
+
+        <input class="submit mx-auto"type="submit" value="Entrar" class="btn btn-outline-primary"/>
+
+    </form>
+</div>
+
+<style>
+    .submit {
+        background-color: dodgerblue;
+        color: #ffffff;
+        border-radius: 10px;
+        border: none;
+        padding: 5px 15px 5px 15px;
+    }
+
+    .icon {
+        color: #ffffff;
+    }
+
+    .margin {
+        margin: 15px
+    }
+
+    body{
+        background-color: #ffffff;
+        margin-top: 80px;
+    }
+</style>
